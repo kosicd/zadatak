@@ -1,0 +1,267 @@
+$bojaTeksta: black;
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+    border: 0;
+  }
+
+/*Dugmici*/
+  
+.btnContainer{
+   text-align: center;
+   justify-content: center;
+   width:100%;
+   max-width: 1600px;
+   margin: 0px auto;
+   display: flex;
+   overflow: auto;
+
+   .btn{
+    margin-top: 35px;
+    text-align: center;
+    padding: 18px;
+    background: rgb(0,255,162);
+    background: linear-gradient(90deg, rgba(0,255,162,1) 0%, rgba(0,255,231,1) 100%);
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    border: none;
+    width: 500px;
+    margin-right: 15px;
+  }
+ 
+}
+
+ 
+
+/*Kartiac*/
+
+.rowCard{
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  
+
+    .card{
+        
+        width: 25%;
+        margin: 40px;
+        box-sizing: border-box;
+        float: left;
+        text-align: center;
+        border-radius: 20px;
+        /*cursor: pointer;*/
+        padding-top: 10px;
+        padding-bottom: 50px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+        0 10px 10px rgba(0,0,0,0.22);
+        transition: .4s;
+        background: white;
+        position: relative;
+        height: 400px;
+
+        h1{
+            text-align: center;
+            font-size: 20px;
+            padding-top: 10px;
+        
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            } 
+
+        p{
+            text-decoration: none ;
+            }
+        a{
+            text-decoration: none ;
+            color: $bojaTeksta;
+        }
+
+        .titlecard{
+            width: 50%;
+            text-align: center;   
+            }
+
+        .cena{
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            }
+
+        img{
+            width: 150px;
+            height: 190px;
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 60px;
+            display: block;
+            }
+
+        hr{
+            width: 50%;
+            }
+
+        #addbtn{
+            text-align: center;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: rgb(0,255,162);
+            background: linear-gradient(90deg, rgba(0,255,162,1) 0%, rgba(0,255,231,1) 100%);
+            width: 50%;
+            padding: 15px;
+            position: absolute;
+            bottom: -25px;
+            left: 25%;
+            right: 25%;
+            cursor: pointer;
+            }
+
+    }
+
+}
+    
+  .fa{
+    color: rgb(150, 150, 150);
+
+  }
+  .checked{
+    color: #000000;
+  }
+
+
+  
+  /**
+    Pokusaj Skeletona
+    */
+  
+  .skeleton {
+    opacity: .7;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+  
+  .skeleton-text {
+    width: 100%;
+    height: .5rem;
+    margin-bottom: .25rem;
+    border-radius: .125rem;
+  }
+  
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-color: hsl(200, 20%, 70%);
+    }
+  
+    100% {
+      background-color: hsl(200, 20%, 95%);
+    }
+  }
+
+/**
+  Poksaj loading dots
+ */
+ 
+
+ .loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+    span{
+        width: 25px;
+        height: 25px;
+        margin: 0 5px;
+        background-color: #000000;
+        border-radius: 50%;
+        display: inline-block;
+        
+        animation-name: dots;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+
+
+            :nth-child(2){
+                background-color: #000000;
+                animation-delay: 0.4s;
+                }
+
+            :nth-child(3){
+                background-color: #000000;
+                animation-delay: 0.8s;
+                }
+        }
+}
+
+@keyframes dots {
+    50%{
+        opacity: 0;
+        background-color: rgb(70, 70, 70);
+        transform: scale(0.7) translateY(10px);
+    }
+}
+
+
+
+/*Responsive fon*/
+  @media only screen and (max-width: 600px){
+
+    .btnContainer{
+        width: auto;
+      .btn{
+        width: 500px;
+      }
+    }
+
+    .rowCard{
+      width: 100%;
+      margin: 0 ;
+      
+    
+      .card{
+        width: 500px;
+        margin: 30px;
+      }
+    
+    }
+
+  }
+
+  /*Responisve tablet*/
+  @media only screen and (max-width: 768px){
+
+    .btnContainer{
+      width: auto;
+    .btn{
+      width: 500px;
+    }
+  }
+
+  .rowCard{
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+
+    .card{
+      width: 40%;
+      align-items: center;
+      display: block;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+  
+  }
+
+
+
+  }
