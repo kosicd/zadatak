@@ -108,9 +108,12 @@ let api = fetch('https://fakestoreapi.com/products').then((data) =>{
 
 
 const sortCat = (button) => {
-  let category = button.getAttribute(category);
+  
+  let category = button.getAttribute('data-category');
+  console.log(category);
   let catItems = document.querySelectorAll('.card');
   
+  console.log(catItems);
   catItems.forEach((item) => {
     item.style.display = 'none';
   });
@@ -119,13 +122,22 @@ const sortCat = (button) => {
     catItems.forEach((item) => {
       item.style.display= 'block';
     });
+  } else {
+    catItems.forEach((item) => {
+      console.log(item.getAttribute('category'))
+      // console.log(item)
+      
+      if (item.getAttribute('category').includes(category)){
+        item.style.display= 'block';
+      }
+    });
   }
 
-  catItems.forEach((item) => {
-    if (item.getAttribute('data-category').includes(category)){
-      item.style.display = 'block';
-    }
-  });
+  // catItems.forEach((item) => {
+  //   if (item.getAttribute('data-category').includes(category)){
+  //     item.style.display = 'block';
+  //   }
+  // });
 }
   /*Sekelton Animacija */
 
